@@ -1,0 +1,85 @@
+.header
+  &-block
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-contact
+    display: flex
+    flex-direction: column
+    justify-content: center
+    text-align: right
+    &__phone
+      font-size: 17px
+      color: $text-color
+      text-decoration: none
+      +bold
+    &__text
+      text-decoration: none
+      font-size: 14px
+      color: $main-color
+      +reg
+
+.navigation
+  display: flex
+  justify-content: space-between
+  flex-direction: row
+  max-width: 800px
+  width: 100%
+  &-block
+    flex-direction: column
+    padding: 19px 0
+    display: flex
+    flex-basis: 67.7%
+
+  &__item
+    display: block
+    position: relative      
+    font-size: 14px
+    color: $text-color
+    text-decoration: none
+    cursor: pointer
+    line-height: 1.5
+    +reg
+
+.navigation__title
+  display: none
+  cursor: pointer
+
+// Адаптив 
+@media (max-width: 1200px)
+ .header
+  &-navigation
+    max-width: 655px
+@media (max-width: 992px)
+  // Гамбургер 
+  .navigation
+    display: none
+    flex-direction: column
+    max-width: 100%
+    transition: all 3.5s
+    position: absolute
+    top: -100px
+    left: 0
+    &__title
+      display: block
+      +bold
+      font-size: 18px
+      margin-bottom: 10px
+    
+  .active
+    transition: all 3.5s
+    display: block
+    position: absolute
+    top: 75px
+    left: 0
+    background: $first-bg
+    padding: 10px 0 10px 20%
+    box-shadow: 0 0 20px 5px #0c0b0bc2
+
+@media (max-width: 720px)
+  .header-block
+    width: 85%
+    margin: 0 auto
+
+    
+    

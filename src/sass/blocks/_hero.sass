@@ -1,0 +1,142 @@
+.hero
+  // background-color: #000
+  background: url('../img/hero/hero-bg.jpg') #000
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  &-block
+    padding-top: 110px
+    padding-bottom: 100px
+    display: flex
+    justify-content: space-between
+  &-text
+    flex-basis: 50%
+  &__title
+    display: block
+    max-width: 510px
+    font-size: 48px
+    line-height: 60px
+    margin: 0 0 33px 0
+    color: #fff
+    +reg
+  &__subtitle
+    display: block
+    font-size: 20px
+    margin: 0 0 60px 0
+    color: #fff
+    +light
+  &-list
+    display: flex
+    flex-direction: column
+    list-style: none
+    padding: 0
+    margin: 0
+    color: #fff
+    &__item
+      display: flex
+      flex-direction: row
+      align-items: center
+      margin-bottom: 22px
+      color: #fff
+    &__icon
+      display: inline-block
+      margin-right: 25px
+      text-align: center
+      line-height: 35px
+      width: 35px
+      height: 35px
+      border: 1px solid #37393a
+      border-radius: 100%
+      font-size: 18px
+      color: #fff
+      & i 
+        color: #fff
+    &__text
+      font-size: 15px
+      +light
+      color: #fff
+  &-form
+    width: 370px
+    height: 429px
+    display: flex
+    flex-direction: column
+    border: 1px solid #ffffff;
+    background-color: #ffffff
+    &__wrap
+      display: flex
+      padding-top: 12px
+      flex-basis: 50%
+      justify-content: flex-end
+    &__title
+      display: block
+      font-size: 18px
+      text-align: center
+      max-width: 250px
+      padding-top: 35px
+      padding-bottom: 25px
+      margin: 0 auto 
+      line-height: 22px;
+      +reg
+      & b
+        +bold
+    &__input
+      margin: 0 auto 15px auto
+    // &__input:last-child
+    //   margin: 0 auto 20px auto
+    &__button
+      margin: 6px auto 43px auto
+      text-transform: uppercase
+
+
+@media (max-width: 1200px)
+  .hero
+    &__title
+      font-size: 40px
+    &__subtitle
+      font-size: 18px
+@media (max-width: 992px)
+  .hero
+    &-block
+      flex-direction: column
+      justify-content: center
+    &__title
+      text-align: center
+      max-width: 700px
+      width: 95%
+      margin: 0 auto 33px auto
+    &__subtitle
+      text-align: center
+    &-list
+      margin: 0 auto
+      width: 50%
+      margin-bottom: 40px
+    &-form
+      margin: 0 auto
+      border-radius: 10px
+@media (max-width: 544px)
+  .hero
+    &-block
+      padding-top: 60px
+    &__title
+      font-size: 24px
+      line-height: 35px
+    &__subtitle
+      font-size: 16px
+    &-list
+      width: 80%
+      &__icon
+        font-size: 14px
+      &__text
+        font-size: 14px
+    &-form
+      &__wrap
+        width: 90%
+        margin: 0 auto
+      &__title
+        font-size: 16px
+      &__input
+        font-size: 12px
+      &__button
+        font-size: 14px
+
+
