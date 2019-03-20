@@ -3,8 +3,7 @@
   color: $text-color
   +reg
 
-.section-first
-  background: $first-bg
+
 
 
 .container
@@ -24,7 +23,7 @@
     outline: 0
 
 .button
-  max-width: 260px
+
   width: 100%
   padding-top: 21px
   padding-bottom: 30px
@@ -41,27 +40,38 @@
 
 @media (min-width: 992px)
   // Hover эфекты 
-  .navigation__item, .header-contact__text
+  .navigation__item, 
+  .header-contact__text
     position: relative
-  .navigation__item, .header-contact__text
+  .navigation__item, 
+  .header-contact__text
     &:after
       content: ''
       position: absolute
-      bottom: 0
+      bottom: 1px
       right: 0
       display: block
-      height: 1.2px
+      height: 1px
       width: 100%
       background-color: grey
       transition: .3s ease-in-out
-      transform: scaleX(0)
+      transform: scaleX(1)
     &:hover:after
       width: 100%
-      transform: scaleX(1)
-
+      left: 0
+      transform: scaleX(0)
 
   .button:hover
     background: lighten($main-color, 15%)
+
+  .card
+    &:hover
+      box-shadow: 0 5px 32px rgba(0, 0, 0, 0.1)
+      .card__img
+        filter: grayscale(10%)
+      .card__button
+        background: $main-color
+        color: #fff
 
 // Адаптив 
 @media (max-width: 1200px)
@@ -75,6 +85,6 @@
     max-width: 520px
 @media (max-width: 544px)
   .container
-    min-width: 310px
+    min-width: 270px
 
 

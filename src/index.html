@@ -12,95 +12,358 @@
   <title>landing</title>
 </head>
 <body> 
+  
+<!-- -----------------------
+-----------HEADER-----------
+------------------------- -->
 
-  <header class="header section-first">
-    <div class="container">
-      <div class="header-block">
-        <div class="navigation-block">
-          <span id="btn" class="menu navigation__title">Меню</span>
-          <nav id="menu" class="navigation">
-              <a class="navigation__item" href="#">Главная</a>
-              <a class="navigation__item" href="#">Виды макетов</a>
-              <a class="navigation__item" href="#">Комплектация макетов</a>
-              <a class="navigation__item" href="#">Реализованные проекты</a>
-              <a class="navigation__item" href="#">Наши клиенты</a>
-              <a class="navigation__item" href="#">Контакты</a>
-          </nav>
-          <!-- /.navigation -->
+  <header class="header-section">
+    <div class="header section-first">
+      <div class="container">
+        <div class="header-block">
+          <div class="navigation-block">
+            <div id="btn" class="menu navigation__title">
+              <span class="navigation__icon-block"><span id="icon" class="navigation__icon"></span></span>
+              <span class="navigation__text">Меню</span>
+            </div>
+            <nav id="menu" class="navigation">
+                <a class="navigation__item" href="#">Главная</a>
+                <a class="navigation__item" href="#">Виды макетов</a>
+                <a class="navigation__item" href="#">Комплектация макетов</a>
+                <a class="navigation__item" href="#">Реализованные проекты</a>
+                <a class="navigation__item" href="#">Наши клиенты</a>
+                <a class="navigation__item" href="#">Контакты</a>
+            </nav>
+            <!-- /.navigation -->
+          </div>
+          <!-- /.header-navigation -->
+          <div class="header-contact">
+            <a href="tel:8800891-33-33" class="header-contact__phone">8 800 891-33-33</a> <!-- /.header-contakt__phone -->
+            <a href="#" class="header-contact__text">
+            Заказать обратный звонок
+          </a> <!-- /.header-contact__text --></div>
+          <!-- /.header-contakt -->
         </div>
-        <!-- /.header-navigation -->
-        <div class="header-contact">
-          <a href="tel:8800891-33-33" class="header-contact__phone">8 800 891-33-33</a> <!-- /.header-contakt__phone -->
-          <a href="#" class="header-contact__text">
-          Заказать обратный звонок
-        </a> <!-- /.header-contact__text --></div>
-        <!-- /.header-contakt -->
+        <!-- /.header-block -->
       </div>
-      <!-- /.header-block -->
+      <!-- /.container -->
     </div>
-    <!-- /.container -->
+    <!-- /.header -->
+  
+<!-- -----------------------
+------------ HERO -----------
+------------------------- -->
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-block">
+  
+          <div class="hero-text">
+            <h2 class="hero__title">Изготовление макетов любой сложности</h2>
+            <!-- /.section__title hero__title -->
+            <h4 class="hero__subtitle">Продажи. Инвестиции. Имидж.</h4>
+            <!-- /.hero__subtitle -->
+            <ul class="hero-list">
+              <li class="hero-list__item">
+                <span class="hero-list__icon">5</span>
+                <!-- /.hero-list__icon -->
+                <span class="hero-list__text">Срок производства <br>от 5 дней</span>
+                 <!-- /.hero-list__text -->
+              </li>
+              <li class="hero-list__item">
+                <span class="hero-list__icon">24</span>
+                <!-- /.hero-list__icon -->
+                <span class="hero-list__text">Гарантия на макеты <br>24 месяца</span>
+                 <!-- /.hero-list__text -->
+              </li>
+              <li class="hero-list__item">
+                <span class="hero-list__icon"><i class="fas fa-sync"></i></span>
+                <!-- /.hero-list__icon -->
+                <span class="hero-list__text">Проектируем, изготавливаем,<br> доставляем и устанавливаем</span>
+                 <!-- /.hero-list__text -->
+              </li>
+              <li class="hero-list__item">
+                <span class="hero-list__icon"><i class="fas fa-map-marked-alt"></i></span>
+                <!-- /.hero-list__icon -->
+                <span class="hero-list__text">Застрахуем, доставим<br> и установим</span>
+                 <!-- /.hero-list__text -->
+              </li>
+            </ul>
+          </div>
+          <!-- /.hero-text -->
+  
+          <div class="hero-form__wrap">
+              <form action="" class="form hero-form" id="hero-form">
+                  <span class="hero-form__title">Оставьте заявку и получите <br> расчет стоимость макета <br> в течение <b>30 минут</b></span>
+                  <!-- /.hero-form__title -->
+                  <input type="text" class="input hero-form__input" name="username" placeholder="Ваше имя">
+                  <input type="tel" class="input hero-form__input" name="phone" placeholder="Контактный телефон">
+                  <input type="text" class="input hero-form__input" name="email" placeholder="Электронная почта">
+                  <button class="button hero-form__button">Оставить заявку</button>
+                  <!-- /.button hero-form__button -->
+                </form>
+                <!-- /#hero-form.form hero-form -->
+          </div>
+          <!-- /.hero-form__wrap -->
+  
+        </div>
+        <!-- /.hero-block -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.hero -->
   </header>
-  <!-- /.header -->
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-block">
+<!-- -----------------------
+----------PORTFOLIO---------
+------------------------- -->
 
-        <div class="hero-text">
-          <h2 class="hero__title">Изготовление макетов любой сложности</h2>
-          <!-- /.section__title hero__title -->
-          <h4 class="hero__subtitle">Продажи. Инвестиции. Имидж.</h4>
-          <!-- /.hero__subtitle -->
-          <ul class="hero-list">
-            <li class="hero-list__item">
-              <span class="hero-list__icon">5</span>
-              <!-- /.hero-list__icon -->
-              <span class="hero-list__text">Срок производства <br>от 5 дней</span>
-               <!-- /.hero-list__text -->
-            </li>
-            <li class="hero-list__item">
-              <span class="hero-list__icon">24</span>
-              <!-- /.hero-list__icon -->
-              <span class="hero-list__text">Гарантия на макеты <br>24 месяца</span>
-               <!-- /.hero-list__text -->
-            </li>
-            <li class="hero-list__item">
-              <span class="hero-list__icon"><i class="fas fa-sync"></i></span>
-              <!-- /.hero-list__icon -->
-              <span class="hero-list__text">Проектируем, изготавливаем,<br> доставляем и устанавливаем</span>
-               <!-- /.hero-list__text -->
-            </li>
-            <li class="hero-list__item">
-              <span class="hero-list__icon"><i class="fas fa-map-marked-alt"></i></span>
-              <!-- /.hero-list__icon -->
-              <span class="hero-list__text">Застрахуем, доставим<br> и установим</span>
-               <!-- /.hero-list__text -->
-            </li>
-          </ul>
-        </div>
-        <!-- /.hero-text -->
-
-        <div class="hero-form__wrap">
-            <form action="" class="form hero-form" id="hero-form">
-                <span class="hero-form__title">Оставьте заявку и получите <br> расчет стоимость макета <br> в течение <b>30 минут</b></span>
-                <!-- /.hero-form__title -->
-                <input type="text" class="input hero-form__input" name="username" placeholder="Ваше имя">
-                <input type="tel" class="input hero-form__input" name="phone" placeholder="Контактный телефон">
-                <input type="text" class="input hero-form__input" name="email" placeholder="Электронная почта">
-                <button class="button hero-form__button">Оставить заявку</button>
-                <!-- /.button hero-form__button -->
-              </form>
-              <!-- /#hero-form.form hero-form -->
-        </div>
-        <!-- /.hero-form__wrap -->
-
+<section class="portfolio">
+  <div class="container">
+    <h2 class="portfolio__title title">Виды макетов</h2>
+    <!-- /.portfolio__title -->
+    <span class="portfolio__subtitle subtitle">Создаем макеты от небольших домов до космических станций</span>
+    <!-- /.portfolio__subtitle -->
+    <div class="portfolio-cards">
+      <div class="portfolio__card card">
+        <span class="card__title">Архитектурные макеты</span>
+        <!-- /.card__title -->
+        <img src="img/portfolio/portfolio-img-1.jpg" alt="" class="card__img">
+        <span class="card-text">
+          <p class="card-text__desc">Многоэтажные дома</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Жилые комплексы</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Коттеджные поселки</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Торговые комплексы</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Бизнес – парки</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Административные здания</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Гостиницы и санатории</p>
+          <!-- /.card-text__desc -->
+        </span>
+        <!-- /.card-text -->
+        <button class="card__button button">Расчитать стоимость</button>
+        <!-- /.card__button button -->
       </div>
-      <!-- /.hero-block -->
+      <!-- /.portfolio__card card -->
+      <div class="portfolio__card card">
+        <span class="card__title">Градостроительные макеты</span>
+        <!-- /.card__title -->
+        <img src="img/portfolio/portfolio-img-2.jpg" alt="" class="card__img">
+        <span class="card-text">
+          <p class="card-text__desc">Области</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Города</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Районы</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Микрорайоны</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Территории</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Мосты и тоннели</p>
+          <!-- /.card-text__desc -->
+        </span>
+        <!-- /.card-text -->
+        <button class="card__button button">Расчитать стоимость</button>
+        <!-- /.card__button button -->
+      </div>
+      <!-- /.portfolio__card card -->
+      <div class="portfolio__card card">
+        <span class="card__title">Промышленные макеты</span>
+        <!-- /.card__title -->
+        <img src="img/portfolio/portfolio-img-3.jpg" alt="" class="card__img">
+        <span class="card-text">
+          <p class="card-text__desc">Предприятия и фабрики</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Энергетические объекты</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Заводы</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Научные центры</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Трубопроводы</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Производственные линии</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Технологические линии</p>
+          <!-- /.card-text__desc -->
+        </span>
+        <!-- /.card-text -->
+        <button class="card__button button">Расчитать стоимость</button>
+        <!-- /.card__button button -->
+      </div>
+      <!-- /.portfolio__card card -->
+      <div class="portfolio__card card">
+        <span class="card__title">Интерьерные макеты</span>
+        <!-- /.card__title -->
+        <img src="img/portfolio/portfolio-img-4.jpg" alt="" class="card__img">
+        <span class="card-text">
+          <p class="card-text__desc">Квартиры</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Офисы</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Коттеджи</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Маагзины</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Спортивные комплексы</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Торговые центры</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Заводы</p>
+          <!-- /.card-text__desc -->
+        </span>
+        <!-- /.card-text -->
+        <button class="card__button button">Расчитать стоимость</button>
+        <!-- /.card__button button -->
+      </div>
+      <!-- /.portfolio__card card -->
+      <div class="portfolio__card card">
+        <span class="card__title">Ландшафтные макеты</span>
+        <!-- /.card__title -->
+        <img src="img/portfolio/portfolio-img-5.jpg" alt="" class="card__img">
+        <span class="card-text">
+          <p class="card-text__desc">Парки</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Сады</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Горы</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Озера</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Рельефы местности</p>
+          <!-- /.card-text__desc -->
+          <p class="card-text__desc">Участки</p>
+          <!-- /.card-text__desc -->
+        </span>
+        <!-- /.card-text -->
+        <button class="card__button button">Расчитать стоимость</button>
+        <!-- /.card__button button -->
+      </div>
+      <!-- /.portfolio__card card -->
+      <div class="portfolio__card card">
+        <span class="card__title">Индивидуальные макеты</span>
+        <!-- /.card__title -->
+        <img src="img/portfolio/portfolio-img-6.jpg" alt="" class="card__img">
+        <span class="card-text">
+          <p class="card-text__desc card-text__desc-long">Мы может воплотить в жизнь любые идеи, с применением высоких технологий, максимальной детализацией и совершенно любых размеров</p>
+          <!-- /.card-text__desc -->
+        </span>
+        <!-- /.card-text -->
+        <button class="card__button button">Расчитать стоимость</button>
+        <!-- /.card__button button -->
+      </div>
+      <!-- /.portfolio__card card -->
     </div>
-    <!-- /.container -->
-  </section>
-  <!-- /.hero -->
+    <!-- /.portfolio-cards -->
+  </div>
+  <!-- /.container -->
+</section>
+<!-- /.portfolio -->
 
+<!-- -----------------------
+----------- PRICE -----------
+------------------------- -->
+
+<section class="price">
+  <div class="container">
+    <h2 class="price__title title">Реализованные проекты</h2>
+    <!-- /.price__title title -->
+    <span class="price__subtitle subtitle">Более 100 компаний уже решают свои бизнес – задачи с помощью наших макетов</span>
+    <!-- /.price__subtitle subtitle -->
+
+
+    <div class="price__block slider" id="slider">
+      <img src="img/price/price-img-2.jpg" alt="" class="slider__img">
+      <div class="slider-block">
+        <h3 class="slider__title">Порт Артек</h3>
+        <!-- /.slider__title -->
+        <small class="slider__desc-tag">Описание:</small>
+        <!-- /.slider__desc-tag -->
+        <span class="slider__desc">Презентация порта Артек для первых лиц государства</span>
+        <div class="slider-price__items">
+          <div class="slider-price__item">
+            <small class="slider__desc-tag">Масштаб:</small> 
+            <!-- /.slider-price__desc -->
+            <span class="slider__desc">1:200</span> 
+            <!-- /.slider-price__text --></div>
+          <!-- /.slider-price__item -->
+          <div class="slider-price__item">
+            <small class="slider__desc-tag">Размер:</small>
+            <!-- /.slider-price__desc -->
+            <span class="slider__desc">1000х2000</span>
+            <!-- /.slider-price__text -->
+          </div>
+          <!-- /.slider-price__item -->
+          <div class="slider-price__item">
+            <small class="slider__desc-tag">Срок изготовления:</small> 
+            <!-- /.slider-price__desc -->
+            <span class="slider__desc">40 дней</span>
+            <!-- /.slider-price__text --></div>
+          <!-- /.slider-price__item -->
+        </div>
+        <!-- /.slider-price__items -->
+        <button class="slider__button button">Заказать макет</button>
+        <!-- /.slider__button button -->
+      </div>
+      <!-- /.slider-block -->
+    </div>
+    <!-- /#slider.price__block slider -->
+<section class="price">
+  <div class="container">
+    <h2 class="price__title title">Реализованные проекты</h2>
+    <!-- /.price__title title -->
+    <span class="price__subtitle subtitle">Более 100 компаний уже решают свои бизнес – задачи с помощью наших макетов</span>
+    <!-- /.price__subtitle subtitle -->
+
+
+    <div class="price__block slider" id="slider">
+      <img src="img/price/price-img-1.jpg" alt="" class="slider__img">
+      <div class="slider-block">
+        <h3 class="slider__title">Порт Артек</h3>
+        <!-- /.slider__title -->
+        <small class="slider__desc-tag">Описание:</small>
+        <!-- /.slider__desc-tag -->
+        <span class="slider__desc">Презентация порта Артек для первых лиц государства</span>
+        <div class="slider-price__items">
+          <div class="slider-price__item">
+            <small class="slider__desc-tag">Масштаб:</small> 
+            <!-- /.slider-price__desc -->
+            <span class="slider__desc">1:200</span> 
+            <!-- /.slider-price__text --></div>
+          <!-- /.slider-price__item -->
+          <div class="slider-price__item">
+            <small class="slider__desc-tag">Размер:</small>
+            <!-- /.slider-price__desc -->
+            <span class="slider__desc">1000х2000</span>
+            <!-- /.slider-price__text -->
+          </div>
+          <!-- /.slider-price__item -->
+          <div class="slider-price__item">
+            <small class="slider__desc-tag">Срок изготовления:</small> 
+            <!-- /.slider-price__desc -->
+            <span class="slider__desc">40 дней</span>
+            <!-- /.slider-price__text --></div>
+          <!-- /.slider-price__item -->
+        </div>
+        <!-- /.slider-price__items -->
+        <button class="slider__button button">Заказать макет</button>
+        <!-- /.slider__button button -->
+      </div>
+      <!-- /.slider-block -->
+    </div>
+    <!-- /#slider.price__block slider -->
+
+
+  </div>
+  <!-- /.container -->
+</section>
+<!-- /.prise -->
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/main.js"></script>

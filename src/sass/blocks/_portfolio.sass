@@ -1,0 +1,130 @@
+.title
+  display: block
+  text-align: center
+  font-size: 36px
+  +reg
+  &:after
+    content: ''
+    display: block
+    width: 31px
+    height: 2px
+    background-color: $main-color
+    margin-top: 20px
+    margin-left: auto
+    margin-right: auto
+.subtitle
+  display: block
+  margin: 0 auto 70px auto
+  padding-top: 10px
+  text-align: center
+  font-size: 20px
+  +light
+.portfolio
+  padding-top: 65px
+  padding-bottom: 0px
+  &-cards
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    flex-wrap: wrap
+  &__card
+    flex-basis: 30%
+    height: 680px
+    margin-bottom: 30px
+    // margin-left: auto
+    // margin-right: auto
+.card
+  position: relative
+  display: flex
+  flex-direction: column
+  text-align: center
+  padding: 35px
+  transition: 0.5s
+  &__title
+    font-size: 20px
+    margin-bottom: 24px
+    +reg
+  &__img
+    width: 300px
+    height: 220px
+    filter: grayscale(100%)
+    // filter: contrast(90%)
+    margin-bottom: 30px
+  &-text
+    &__desc
+      font-size: 16px
+      line-height: 19px
+      margin: 0
+      +light
+      &:after
+        content: ''
+        display: block
+        width: 9px
+        height: 2px
+        background-color: $main-color
+        margin: 7px auto
+      &:last-child:after
+        content: none
+      &-long
+        max-width: 240px
+        margin: 0 auto
+  &__button
+    transition: 0.5s
+    border: 1px solid #efefef
+    max-width: 230px
+    padding-top: 20px
+    padding-bottom: 20px
+    color: #000
+    background: #fff
+    font-size: 13px
+    text-transform: uppercase
+    +reg
+    position: absolute
+    bottom: 0px
+    margin-left: 35px
+    margin-right: 35px
+    margin-bottom: 35px
+    letter-spacing: 1.2px
+@media (max-width: 1200px)
+  .card
+    margin-left: auto
+    margin-right: auto
+@media (max-width: 992px)
+  .portfolio
+    &__title
+      margin-bottom: 20px
+    &__subtitle
+      padding-top: 0
+      // margin-bottom: 20px
+  .card
+    &__img
+      filter: grayscale(10%)
+    box-shadow: 0 5px 32px rgba(0, 0, 0, 0.1)
+    &__button
+      box-shadow: 0 5px 32px rgba(0, 0, 0, 0.1)
+@media (max-width: 720px)
+  .portfolio
+    &__subtitle
+      max-width: 300px
+@media (max-width: 544px)
+  .portfolio
+    &__title
+      font-size: 24px
+    &__subtitle
+      font-size: 14px
+      max-width: 250px
+  .card
+    padding: 10px
+    &__title
+      font-size: 18px
+      padding-top: 15px
+    &__img
+      width: 270px
+    &-text
+      &__desc
+        font-size: 14px
+        &:after
+          height: 1px
+    &__button
+      margin-left: 20px
+      margin-right: 20px

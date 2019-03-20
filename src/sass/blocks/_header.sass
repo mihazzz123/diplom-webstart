@@ -1,4 +1,11 @@
+.header-section
+    background: url(../img/hero/hero-bg.jpg) #000
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+
 .header
+  background: $first-bg
   &-block
     display: flex
     justify-content: space-between
@@ -18,6 +25,8 @@
       font-size: 14px
       color: $main-color
       +reg
+      &:after
+        background: $main-color
 
 .navigation
   display: flex
@@ -27,7 +36,7 @@
   width: 100%
   &-block
     flex-direction: column
-    padding: 19px 0
+    padding: 18px 0
     display: flex
     flex-basis: 67.7%
 
@@ -56,18 +65,52 @@
     display: none
     flex-direction: column
     max-width: 100%
-    transition: all 3.5s
     position: absolute
     top: -100px
-    left: 0
+    &-block
+      flex-basis: 20%
+    &__item
+      transition: .5s
+    &__icon-block
+      width: 17px
+      height: 30px
+      display: flex
+      align-items: center
+      position: relative
+    &__icon
+      width: 17px
+      height: 2px
+      background: $text-color
+      &:after, &:before
+        content: ''
+        position: absolute
+        transition: .5s
+        display: block
+        width: 17px
+        height: 2px
+        background: $text-color
+      &:before
+        transform: translateY(-6px)
+      &:after
+        transform: translateY(6px)
     &__title
-      display: block
+      display: flex
+      align-items: center
+    &__text
       +bold
       font-size: 18px
-      margin-bottom: 10px
-    
+      margin-left: 10px
+  .icon-active
+    height: 0
+    &:before
+      transform: rotate(-45deg)
+      // transform-origin: center center
+      width: 20px
+    &:after
+      transform: rotate(45deg)
+      // transform-origin: center center
+      width: 20px
   .active
-    transition: all 3.5s
     display: block
     position: absolute
     top: 75px
@@ -77,9 +120,26 @@
     box-shadow: 0 0 20px 5px #0c0b0bc2
 
 @media (max-width: 720px)
-  .header-block
+  .header
+    background: none
+    &-contact__phone
+      color: #fff
+    &-block
     width: 85%
     margin: 0 auto
+  .navigation
+    background: #0000009c
+    &__text
+      color: #fff
+    &__item
+      color: #fff
+    &__icon
+      background: #fff
+      &:before, &:after
+        background: #fff
+@media (max-width: 540px)
+  .navigation__text
+    display: none
 
     
     
