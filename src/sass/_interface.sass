@@ -23,7 +23,6 @@
     outline: 0
 
 .button
-
   width: 100%
   padding-top: 21px
   padding-bottom: 30px
@@ -38,16 +37,19 @@
   &:focus
     outline: 0
 
+.slick-prev, .slick-next
+  background: none
+  border: none
+  &:focus
+    outline: 0
+
 @media (min-width: 992px)
   // Hover эфекты 
+
   .navigation__item, 
-  .header-contact__text
-    position: relative
-  .navigation__item, 
-  .header-contact__text
+  .contact__text
     &:after
       content: ''
-      position: absolute
       bottom: 1px
       right: 0
       display: block

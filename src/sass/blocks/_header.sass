@@ -4,29 +4,30 @@
     background-position: center center
     background-repeat: no-repeat
 
+.contact
+  display: flex
+  flex-direction: column
+  justify-content: center
+  text-align: right
+  &__phone
+    font-size: 17px
+    color: $text-color
+    text-decoration: none
+    +bold
+  &__text
+    display: block
+    text-decoration: none
+    font-size: 14px
+    color: $main-color
+    +reg
+    &:after
+      background: $main-color
 .header
   background: $first-bg
   &-block
     display: flex
     justify-content: space-between
     align-items: center
-  &-contact
-    display: flex
-    flex-direction: column
-    justify-content: center
-    text-align: right
-    &__phone
-      font-size: 17px
-      color: $text-color
-      text-decoration: none
-      +bold
-    &__text
-      text-decoration: none
-      font-size: 14px
-      color: $main-color
-      +reg
-      &:after
-        background: $main-color
 
 .navigation
   display: flex
@@ -53,6 +54,10 @@
 .navigation__title
   display: none
   cursor: pointer
+  &:focus
+    background: none
+    border: none
+    outline: 0
 
 // Адаптив 
 @media (max-width: 1200px)
@@ -64,7 +69,7 @@
   .navigation
     display: none
     flex-direction: column
-    max-width: 100%
+    max-width: 98%
     position: absolute
     top: -100px
     &-block
@@ -113,22 +118,25 @@
   .active
     display: block
     position: absolute
+    width: 99%
     top: 75px
-    left: 0
+    left: 1%
+    right: 1%
     background: $first-bg
     padding: 10px 0 10px 20%
-    box-shadow: 0 0 20px 5px #0c0b0bc2
+    box-shadow: 0 0 15px 1px $main-color 
 
 @media (max-width: 720px)
+  .contact__phone
+    color: #fff
   .header
     background: none
-    &-contact__phone
-      color: #fff
     &-block
     width: 85%
     margin: 0 auto
   .navigation
-    background: #0000009c
+    background: #000000de
+
     &__text
       color: #fff
     &__item

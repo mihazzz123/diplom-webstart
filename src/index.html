@@ -6,19 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon" /> 
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
   <!-- Собственные стили -->
   <link rel="stylesheet" href="css/style.css">
-  <title>landing</title>
+  <title>Изготовление макетов любой сложности</title>
 </head>
 <body> 
-  
-<!-- -----------------------
------------HEADER-----------
-------------------------- -->
+
+  <!-- Яндекс метрика -->
+ <!-- Yandex.Metrika counter --> <script> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym"); ym(52938172, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/52938172" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+  <!-- Яндекс Карты -->
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=c46d4ee4-ffc9-438e-9e0f-b6b79992cd4b"></script>    
+  <script src="https://yandex.st/jquery/2.2.3/jquery.min.js"></script>
+  <!-- HEADER -->
 
   <header class="header-section">
-    <div class="header section-first">
+    <div id="header" class="header section-first">
       <div class="container">
         <div class="header-block">
           <div class="navigation-block">
@@ -27,21 +32,22 @@
               <span class="navigation__text">Меню</span>
             </div>
             <nav id="menu" class="navigation">
-                <a class="navigation__item" href="#">Главная</a>
-                <a class="navigation__item" href="#">Виды макетов</a>
-                <a class="navigation__item" href="#">Комплектация макетов</a>
-                <a class="navigation__item" href="#">Реализованные проекты</a>
-                <a class="navigation__item" href="#">Наши клиенты</a>
-                <a class="navigation__item" href="#">Контакты</a>
+                <a class="navigation__item" href="#header">Главная</a>
+                <a class="navigation__item" href="#portfolio">Виды макетов</a>
+                <a class="navigation__item" href="#advantage">Комплектация макетов</a>
+                <a class="navigation__item" href="#price">Реализованные проекты</a>
+                <a class="navigation__item" href="#clients">Наши клиенты</a>
+                <a class="navigation__item" href="#footer">Контакты</a>
             </nav>
             <!-- /.navigation -->
           </div>
           <!-- /.header-navigation -->
-          <div class="header-contact">
-            <a href="tel:8800891-33-33" class="header-contact__phone">8 800 891-33-33</a> <!-- /.header-contakt__phone -->
-            <a href="#" class="header-contact__text">
+          <div class="header-contact contact">
+            <a href="tel:8800891-33-33" class="header-contact__phone contact__phone phone">8 800 891-33-33</a> <!-- /.header-contakt__phone -->
+            <a href="#" id="callMe" onclick="ym(52938172, 'reachGoal', 'callMe'); return true;" class="header-contact__text contact__text">
             Заказать обратный звонок
-          </a> <!-- /.header-contact__text --></div>
+            </a> <!-- /.header-contact__text -->
+          </div>
           <!-- /.header-contakt -->
         </div>
         <!-- /.header-block -->
@@ -50,11 +56,9 @@
     </div>
     <!-- /.header -->
   
-<!-- -----------------------
------------- HERO -----------
-------------------------- -->
+  <!--  HERO  -->
 
-    <section class="hero">
+  <section id="hero" class="hero">
       <div class="container">
         <div class="hero-block">
   
@@ -93,13 +97,13 @@
           <!-- /.hero-text -->
   
           <div class="hero-form__wrap">
-              <form action="" class="form hero-form" id="hero-form">
+              <form action="mail.php" method="POST" class="form hero-form" id="hero-form" onsubmit="ym(52938172, 'reachGoal', 'hero_form'); return true;">
                   <span class="hero-form__title">Оставьте заявку и получите <br> расчет стоимость макета <br> в течение <b>30 минут</b></span>
                   <!-- /.hero-form__title -->
-                  <input type="text" class="input hero-form__input" name="username" placeholder="Ваше имя">
-                  <input type="tel" class="input hero-form__input" name="phone" placeholder="Контактный телефон">
-                  <input type="text" class="input hero-form__input" name="email" placeholder="Электронная почта">
-                  <button class="button hero-form__button">Оставить заявку</button>
+                  <input type="text" class="input hero-form__input" name="username" placeholder="Ваше имя" data-validetta="required,minLength[2],maxLength[15]"  data-vd-message-required="Укажите имя." data-vd-message-minLength="Минимум 2 символов" data-vd-message-maxLength="Максимум 15 символов">
+                  <input type="tel" class="input hero-form__input phone" name="phone" placeholder="Контактный телефон" data-validetta="required">
+                  <input type="text" class="input hero-form__input" name="email" placeholder="Электронная почта" data-validetta="required,email">
+                  <button type="submit" class="button hero-form__button">Оставить заявку</button>
                   <!-- /.button hero-form__button -->
                 </form>
                 <!-- /#hero-form.form hero-form -->
@@ -110,262 +114,417 @@
         <!-- /.hero-block -->
       </div>
       <!-- /.container -->
-    </section>
+  </section>
     <!-- /.hero -->
   </header>
 
-<!-- -----------------------
-----------PORTFOLIO---------
-------------------------- -->
+  <!-- PORTFOLIO -->
 
-<section class="portfolio">
-  <div class="container">
-    <h2 class="portfolio__title title">Виды макетов</h2>
-    <!-- /.portfolio__title -->
-    <span class="portfolio__subtitle subtitle">Создаем макеты от небольших домов до космических станций</span>
-    <!-- /.portfolio__subtitle -->
-    <div class="portfolio-cards">
-      <div class="portfolio__card card">
-        <span class="card__title">Архитектурные макеты</span>
-        <!-- /.card__title -->
-        <img src="img/portfolio/portfolio-img-1.jpg" alt="" class="card__img">
-        <span class="card-text">
-          <p class="card-text__desc">Многоэтажные дома</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Жилые комплексы</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Коттеджные поселки</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Торговые комплексы</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Бизнес – парки</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Административные здания</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Гостиницы и санатории</p>
-          <!-- /.card-text__desc -->
-        </span>
-        <!-- /.card-text -->
-        <button class="card__button button">Расчитать стоимость</button>
-        <!-- /.card__button button -->
-      </div>
-      <!-- /.portfolio__card card -->
-      <div class="portfolio__card card">
-        <span class="card__title">Градостроительные макеты</span>
-        <!-- /.card__title -->
-        <img src="img/portfolio/portfolio-img-2.jpg" alt="" class="card__img">
-        <span class="card-text">
-          <p class="card-text__desc">Области</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Города</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Районы</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Микрорайоны</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Территории</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Мосты и тоннели</p>
-          <!-- /.card-text__desc -->
-        </span>
-        <!-- /.card-text -->
-        <button class="card__button button">Расчитать стоимость</button>
-        <!-- /.card__button button -->
-      </div>
-      <!-- /.portfolio__card card -->
-      <div class="portfolio__card card">
-        <span class="card__title">Промышленные макеты</span>
-        <!-- /.card__title -->
-        <img src="img/portfolio/portfolio-img-3.jpg" alt="" class="card__img">
-        <span class="card-text">
-          <p class="card-text__desc">Предприятия и фабрики</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Энергетические объекты</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Заводы</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Научные центры</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Трубопроводы</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Производственные линии</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Технологические линии</p>
-          <!-- /.card-text__desc -->
-        </span>
-        <!-- /.card-text -->
-        <button class="card__button button">Расчитать стоимость</button>
-        <!-- /.card__button button -->
-      </div>
-      <!-- /.portfolio__card card -->
-      <div class="portfolio__card card">
-        <span class="card__title">Интерьерные макеты</span>
-        <!-- /.card__title -->
-        <img src="img/portfolio/portfolio-img-4.jpg" alt="" class="card__img">
-        <span class="card-text">
-          <p class="card-text__desc">Квартиры</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Офисы</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Коттеджи</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Маагзины</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Спортивные комплексы</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Торговые центры</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Заводы</p>
-          <!-- /.card-text__desc -->
-        </span>
-        <!-- /.card-text -->
-        <button class="card__button button">Расчитать стоимость</button>
-        <!-- /.card__button button -->
-      </div>
-      <!-- /.portfolio__card card -->
-      <div class="portfolio__card card">
-        <span class="card__title">Ландшафтные макеты</span>
-        <!-- /.card__title -->
-        <img src="img/portfolio/portfolio-img-5.jpg" alt="" class="card__img">
-        <span class="card-text">
-          <p class="card-text__desc">Парки</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Сады</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Горы</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Озера</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Рельефы местности</p>
-          <!-- /.card-text__desc -->
-          <p class="card-text__desc">Участки</p>
-          <!-- /.card-text__desc -->
-        </span>
-        <!-- /.card-text -->
-        <button class="card__button button">Расчитать стоимость</button>
-        <!-- /.card__button button -->
-      </div>
-      <!-- /.portfolio__card card -->
-      <div class="portfolio__card card">
-        <span class="card__title">Индивидуальные макеты</span>
-        <!-- /.card__title -->
-        <img src="img/portfolio/portfolio-img-6.jpg" alt="" class="card__img">
-        <span class="card-text">
-          <p class="card-text__desc card-text__desc-long">Мы может воплотить в жизнь любые идеи, с применением высоких технологий, максимальной детализацией и совершенно любых размеров</p>
-          <!-- /.card-text__desc -->
-        </span>
-        <!-- /.card-text -->
-        <button class="card__button button">Расчитать стоимость</button>
-        <!-- /.card__button button -->
-      </div>
-      <!-- /.portfolio__card card -->
-    </div>
-    <!-- /.portfolio-cards -->
-  </div>
-  <!-- /.container -->
-</section>
-<!-- /.portfolio -->
-
-<!-- -----------------------
------------ PRICE -----------
-------------------------- -->
-
-<section class="price">
-  <div class="container">
-    <h2 class="price__title title">Реализованные проекты</h2>
-    <!-- /.price__title title -->
-    <span class="price__subtitle subtitle">Более 100 компаний уже решают свои бизнес – задачи с помощью наших макетов</span>
-    <!-- /.price__subtitle subtitle -->
-
-
-    <div class="price__block slider" id="slider">
-      <img src="img/price/price-img-2.jpg" alt="" class="slider__img">
-      <div class="slider-block">
-        <h3 class="slider__title">Порт Артек</h3>
-        <!-- /.slider__title -->
-        <small class="slider__desc-tag">Описание:</small>
-        <!-- /.slider__desc-tag -->
-        <span class="slider__desc">Презентация порта Артек для первых лиц государства</span>
-        <div class="slider-price__items">
-          <div class="slider-price__item">
-            <small class="slider__desc-tag">Масштаб:</small> 
-            <!-- /.slider-price__desc -->
-            <span class="slider__desc">1:200</span> 
-            <!-- /.slider-price__text --></div>
-          <!-- /.slider-price__item -->
-          <div class="slider-price__item">
-            <small class="slider__desc-tag">Размер:</small>
-            <!-- /.slider-price__desc -->
-            <span class="slider__desc">1000х2000</span>
-            <!-- /.slider-price__text -->
-          </div>
-          <!-- /.slider-price__item -->
-          <div class="slider-price__item">
-            <small class="slider__desc-tag">Срок изготовления:</small> 
-            <!-- /.slider-price__desc -->
-            <span class="slider__desc">40 дней</span>
-            <!-- /.slider-price__text --></div>
-          <!-- /.slider-price__item -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2 class="portfolio__title title">Виды макетов</h2>
+      <!-- /.portfolio__title -->
+      <span class="portfolio__subtitle subtitle">Создаем макеты от небольших домов до космических станций</span>
+      <!-- /.portfolio__subtitle -->
+      <div class="portfolio-cards">
+        <div class="portfolio__card card">
+          <span class="card__title">Архитектурные макеты</span>
+          <!-- /.card__title -->
+          <img src="img/portfolio/portfolio-img-1.jpg" alt="" class="card__img">
+          <span class="card-text">
+            <span class="card-text__desc">Многоэтажные дома</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Жилые комплексы</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Коттеджные поселки</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Торговые комплексы</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Бизнес – парки</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Административные здания</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Гостиницы и санатории</span>
+            <!-- /.card-text__desc -->
+          </span>
+          <!-- /.card-text -->
+          <button class="card__button button">Расчитать стоимость</button>
+          <!-- /.card__button button -->
         </div>
-        <!-- /.slider-price__items -->
-        <button class="slider__button button">Заказать макет</button>
-        <!-- /.slider__button button -->
-      </div>
-      <!-- /.slider-block -->
-    </div>
-    <!-- /#slider.price__block slider -->
-<section class="price">
-  <div class="container">
-    <h2 class="price__title title">Реализованные проекты</h2>
-    <!-- /.price__title title -->
-    <span class="price__subtitle subtitle">Более 100 компаний уже решают свои бизнес – задачи с помощью наших макетов</span>
-    <!-- /.price__subtitle subtitle -->
-
-
-    <div class="price__block slider" id="slider">
-      <img src="img/price/price-img-1.jpg" alt="" class="slider__img">
-      <div class="slider-block">
-        <h3 class="slider__title">Порт Артек</h3>
-        <!-- /.slider__title -->
-        <small class="slider__desc-tag">Описание:</small>
-        <!-- /.slider__desc-tag -->
-        <span class="slider__desc">Презентация порта Артек для первых лиц государства</span>
-        <div class="slider-price__items">
-          <div class="slider-price__item">
-            <small class="slider__desc-tag">Масштаб:</small> 
-            <!-- /.slider-price__desc -->
-            <span class="slider__desc">1:200</span> 
-            <!-- /.slider-price__text --></div>
-          <!-- /.slider-price__item -->
-          <div class="slider-price__item">
-            <small class="slider__desc-tag">Размер:</small>
-            <!-- /.slider-price__desc -->
-            <span class="slider__desc">1000х2000</span>
-            <!-- /.slider-price__text -->
-          </div>
-          <!-- /.slider-price__item -->
-          <div class="slider-price__item">
-            <small class="slider__desc-tag">Срок изготовления:</small> 
-            <!-- /.slider-price__desc -->
-            <span class="slider__desc">40 дней</span>
-            <!-- /.slider-price__text --></div>
-          <!-- /.slider-price__item -->
+        <!-- /.portfolio__card card -->
+        <div class="portfolio__card card">
+          <span class="card__title">Градостроительные макеты</span>
+          <!-- /.card__title -->
+          <img src="img/portfolio/portfolio-img-2.jpg" alt="" class="card__img">
+          <span class="card-text">
+            <span class="card-text__desc">Области</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Города</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Районы</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Микрорайоны</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Территории</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Мосты и тоннели</span>
+            <!-- /.card-text__desc -->
+          </span>
+          <!-- /.card-text -->
+          <button class="card__button button">Расчитать стоимость</button>
+          <!-- /.card__button button -->
         </div>
-        <!-- /.slider-price__items -->
-        <button class="slider__button button">Заказать макет</button>
-        <!-- /.slider__button button -->
+        <!-- /.portfolio__card card -->
+        <div class="portfolio__card card">
+          <span class="card__title">Промышленные макеты</span>
+          <!-- /.card__title -->
+          <img src="img/portfolio/portfolio-img-3.jpg" alt="" class="card__img">
+          <span class="card-text">
+            <span class="card-text__desc">Предприятия и фабрики</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Энергетические объекты</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Заводы</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Научные центры</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Трубопроводы</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Производственные линии</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Технологические линии</span>
+            <!-- /.card-text__desc -->
+          </span>
+          <!-- /.card-text -->
+          <button class="card__button button">Расчитать стоимость</button>
+          <!-- /.card__button button -->
+        </div>
+        <!-- /.portfolio__card card -->
+        <div class="portfolio__card card">
+          <span class="card__title">Интерьерные макеты</span>
+          <!-- /.card__title -->
+          <img src="img/portfolio/portfolio-img-4.jpg" alt="" class="card__img">
+          <span class="card-text">
+            <span class="card-text__desc">Квартиры</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Офисы</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Коттеджи</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Маагзины</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Спортивные комплексы</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Торговые центры</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Заводы</span>
+            <!-- /.card-text__desc -->
+          </span>
+          <!-- /.card-text -->
+          <button class="card__button button">Расчитать стоимость</button>
+          <!-- /.card__button button -->
+        </div>
+        <!-- /.portfolio__card card -->
+        <div class="portfolio__card card">
+          <span class="card__title">Ландшафтные макеты</span>
+          <!-- /.card__title -->
+          <img src="img/portfolio/portfolio-img-5.jpg" alt="" class="card__img">
+          <span class="card-text">
+            <span class="card-text__desc">Парки</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Сады</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Горы</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Озера</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Рельефы местности</span>
+            <!-- /.card-text__desc -->
+            <span class="card-text__desc">Участки</span>
+            <!-- /.card-text__desc -->
+          </span>
+          <!-- /.card-text -->
+          <button class="card__button button">Расчитать стоимость</button>
+          <!-- /.card__button button -->
+        </div>
+        <!-- /.portfolio__card card -->
+        <div class="portfolio__card card">
+          <span class="card__title">Индивидуальные макеты</span>
+          <!-- /.card__title -->
+          <img src="img/portfolio/portfolio-img-6.jpg" alt="" class="card__img">
+          <span class="card-text">
+            <span class="card-text__desc card-text__desc-long">Мы может воплотить в жизнь любые идеи, с применением высоких технологий, максимальной детализацией и совершенно любых размеров</span>
+            <!-- /.card-text__desc -->
+          </span>
+          <!-- /.card-text -->
+          <button class="card__button button">Расчитать стоимость</button>
+          <!-- /.card__button button -->
+        </div>
+        <!-- /.portfolio__card card -->
       </div>
-      <!-- /.slider-block -->
+      <!-- /.portfolio-cards -->
     </div>
-    <!-- /#slider.price__block slider -->
+    <!-- /.container -->
+  </section>
+  <!-- /.portfolio -->
+
+  <!--  PRICE  -->
+
+  <section id="price" class="price">
+    <div class="container">
+      <h2 class="price__title title">Реализованные проекты</h2>
+      <!-- /.price__title title -->
+      <span class="price__subtitle subtitle">Более 100 компаний уже решают свои бизнес – задачи с помощью наших макетов</span>
+      <!-- /.price__subtitle subtitle -->
+
+      
+
+      <div class="price__block">
+
+        <button id="slider-one__prvBtn" type="button" class="slider-arrow__left slick-prev">
+          <i class="fas fa-angle-left"></i>
+        </button>
+        <button id="slider-one__nextBtn" type="button" class="slider-arrow__right slick-next">
+          <i class="fas fa-angle-right"></i>
+        </button>
+        
+      <div id="slider-one" class="slider-one slider">
+        <div class="slide">
+                  
+            <img src="img/price/price-img-2.jpg" alt="" class="slider__img">
+            <div class="slider-block">
+              <h3 class="slider__title">Порт Артек</h3>
+              <!-- /.slider__title -->
+              <small class="slider__desc-tag">Описание:</small>
+              <!-- /.slider__desc-tag -->
+              <span class="slider__desc">Презентация порта Артек для первых лиц государства</span>
+              <div class="slider-price__items">
+                <div class="slider-price__item">
+                  <small class="slider__desc-tag">Масштаб:</small> 
+                  <!-- /.slider-price__desc -->
+                  <span class="slider__desc">1:200</span> 
+                  <!-- /.slider-price__text --></div>
+                <!-- /.slider-price__item -->
+                <div class="slider-price__item">
+                  <small class="slider__desc-tag">Размер:</small>
+                  <!-- /.slider-price__desc -->
+                  <span class="slider__desc">1000х2000</span>
+                  <!-- /.slider-price__text -->
+                </div>
+                <!-- /.slider-price__item -->
+                <div class="slider-price__item">
+                  <small class="slider__desc-tag">Срок изготовления:</small> 
+                  <!-- /.slider-price__desc -->
+                  <span class="slider__desc">40 дней</span>
+                  <!-- /.slider-price__text --></div>
+                <!-- /.slider-price__item -->
+              </div>
+              <!-- /.slider-price__items -->
+              <button class="slider__button button">Заказать макет</button>
+              <!-- /.slider__button button -->
+            </div>
+            <!-- /.slider-block -->
+        </div>
+
+        <div class="slide">
+            <img src="img/price/price-img-1.jpg" alt="" class="slider__img">
+            <div class="slider-block">
+              <h3 class="slider__title">Порт Артек</h3>
+              <!-- /.slider__title -->
+              <small class="slider__desc-tag">Описание:</small>
+              <!-- /.slider__desc-tag -->
+              <span class="slider__desc">Презентация порта Артек для первых лиц государства</span>
+              <div class="slider-price__items">
+                <div class="slider-price__item">
+                  <small class="slider__desc-tag">Масштаб:</small> 
+                  <!-- /.slider-price__desc -->
+                  <span class="slider__desc">1:200</span> 
+                  <!-- /.slider-price__text --></div>
+                <!-- /.slider-price__item -->
+                <div class="slider-price__item">
+                  <small class="slider__desc-tag">Размер:</small>
+                  <!-- /.slider-price__desc -->
+                  <span class="slider__desc">1000х2000</span>
+                  <!-- /.slider-price__text -->
+                </div>
+                <!-- /.slider-price__item -->
+                <div class="slider-price__item">
+                  <small class="slider__desc-tag">Срок изготовления:</small> 
+                  <!-- /.slider-price__desc -->
+                  <span class="slider__desc">40 дней</span>
+                  <!-- /.slider-price__text --></div>
+                <!-- /.slider-price__item -->
+              </div>
+              <!-- /.slider-price__items -->
+              <button class="slider__button button">Заказать макет</button>
+              <!-- /.slider__button button -->
+            </div>
+          </div>
+        </div>  
+      </div> 
+        
+    
+      
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.prise -->
+
+  <!--  ADVANTAGE  -->
+  
+  <section id="advantage" class="advantage">
+    <div class="container">
+      <h3 class="advantage__title">Все макеты, изготовленные нашей макетной мастерской, помогли клиентам выполнить поставленные цели, а именно:</h3>
+      <!-- /.advantage__title -->
+      <div class="advantage-block">
+        <div class="advantage-block__item">
+          <img src="img/advantage/advantage-img-1.png" alt="" class="advantage-block__img">
+          <span class="advantage-block__text">Продать квартиру, дом,<br> участок, объект.</span>
+          <!-- /.advantage-block__text -->
+          </div>
+        <!-- /.advantage-block__item -->
+        <div class="advantage-block__item">
+          <img src="img/advantage/advantage-img-2.png" alt="" class="advantage-block__img">
+          <span class="advantage-block__text">Привлечь инвестиции <br> в проект.</span> 
+          <!-- /.advantage-block__text -->
+          </div>
+        <!-- /.advantage-block__item -->
+        <div class="advantage-block__item">
+          <img src="img/advantage/advantage-img-3.png" alt="" class="advantage-block__img">
+          <span class="advantage-block__text">
+          Наглядно представить объект <br> посетителю с целью ознакомления <br> с территорией, зданием.
+          </span> <!-- /.advantage-block__text -->
+        </div>
+        <!-- /.advantage-block__item -->
+        <div class="advantage-block__item">
+          <img src="img/advantage/advantage-img-4.png" alt="" class="advantage-block__img">
+          <span class="advantage-block__text">Представить проект <br>первым лицам государства, <br>компании.</span>
+            <!-- /.advantage-block__text -->
+          </div>
+        <!-- /.advantage-block__item -->
+        <div class="advantage-block__item">
+          <img src="img/advantage/advantage-img-5.png" alt="" class="advantage-block__img">
+          <span class="advantage-block__text">Обучение сотрудников, <br>военнослужащих,  студентов <br> и т.д.</span>
+          <!-- /.advantage-block__text -->
+          </div>
+        <!-- /.advantage-block__item -->
+        <div class="advantage-block__item">
+          <img src="img/advantage/advantage-img-6.png" alt="" class="advantage-block__img">
+          <span class="advantage-block__text">Получить разрешение <br>на строительство, согласование проекта.</span>
+          <!-- /.advantage-block__text -->
+          </div>
+        <!-- /.advantage-block__item -->
+        <div class="advantage-block__item">
+          <img src="img/advantage/advantage-img-7.png" alt="" class="advantage-block__img">
+          <span class="advantage-block__text">Бизнес подарок.</span>
+          <!-- /.advantage-block__text -->
+        </div>
+        <!-- /.advantage-block__item -->
+        <div class="advantage-block__item">
+          <img src="img/advantage/advantage-img-8.png" alt="" class="advantage-block__img">
+          <span class="advantage-block__text">Дополнить интерьер.</span>
+          <!-- /.advantage-block__text -->
+        </div>
+        <!-- /.advantage-block__item -->
+      </div>
+      <!-- /.advantage-block -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.advantage -->
+
+  <!--  CLIENTS  -->
+
+  <section id="clients" class="clients">
+    <div class="container">
+      <h4 class="clients__title">Наши клиенты</h4>
+      <!-- /.clients__title -->
+      <div class="clients-block">
+        <button id="slider-two__prevBtn" type="button" class="slider-arrow__left slick-prev">
+          <i class="fas fa-angle-left"></i>
+        </button>
+        <button id="slider-two__nextBtn" type="button" class="slider-arrow__right slick-next">
+          <i class="fas fa-angle-right"></i>
+        </button>
+        <!-- /.clients-block__arrows -->
+        <div id="slider-two" class="slider-two">
+          <div class="slider__image">
+            <img src="img/clients/clients-img-1.png" alt="" class="slider__item">
+          </div>
+          <div class="slider__image">
+              <img src="img/clients/clients-img-2.png" alt="" class="slider__item">
+          </div>
+          <div class="slider__image">
+            <img src="img/clients/clients-img-3.png" alt="" class="slider__item">
+          </div>
+          <div class="slider__image">
+            <img src="img/clients/clients-img-4.png" alt="" class="slider__item">
+          </div>
+          <div class="slider__image">
+            <img src="img/clients/clients-img-5.png" alt="" class="slider__item">
+          </div>
+          <div class="slider__image">
+            <img src="img/clients/clients-img-1.png" alt="" class="slider__item">
+          </div>
+          <div class="slider__image">
+            <img src="img/clients/clients-img-2.png" alt="" class="slider__item">
+          </div>
+          <div class="slider__image">
+            <img src="img/clients/clients-img-3.png" alt="" class="slider__item">
+          </div>
+          <div class="slider__image">
+            <img src="img/clients/clients-img-4.png" alt="" class="slider__item">
+          </div>
+          <div class="slider__image">
+            <img src="img/clients/clients-img-5.png" alt="" class="slider__item">
+          </div>
+        </div>
+        <!-- /.clients-slider -->
+      </div>
+      <!-- /.clients-block -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.clients -->
+
+  <!--  MAP  -->
+  <map name="myMap" class="map">
+    <div id="map" style="width: 100%; height: 420px"></div>
+  </map>
+
+  <!--  FOOTER  -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="footer-block">
+        <div class="footer-address">
+          <p class="footer-address__icon"><i class="fas fa-map-marker-alt"></i></p>
+          <!-- /.footer-address__icon -->
+          <span class="footer-address__text">
+            г. Москва, <br>Автомоторная улица, 4А, стр.21
+          </span>
+          <!-- /.footer-address__text -->
+        </div>
+        <!-- /.footer-address -->
+        <div class="footer-contact contact">
+          <a href="tel:8800891-33-33" class="footer-contact__phone contact__phone">8 800 891-33-33</a> <!-- /.footer-contakt__phone -->
+          <a href="#" class="footer-contact__text contact__text">
+          Заказать обратный звонок
+          </a> <!-- /.footer-contact__text -->
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- /.footer -->
 
 
-  </div>
-  <!-- /.container -->
-</section>
-<!-- /.prise -->
 
   <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="js/slick.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/jquery.maskedinput.min.js"></script>
+  <script src="js/validetta.min.js"></script>
+  <script src="js/validettaLang-ru-RU.js"></script>
 </body>
 </html>

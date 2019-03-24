@@ -1,20 +1,31 @@
 .price
-  padding-top: 65px
-  padding-bottom: 90px
+  padding-top: 60px
+  padding-bottom: 80px
   background: #f6f6f6
   &__title
     margin-bottom: 30px
   &__subtitle
-    margin-bottom: 100px
+    margin-bottom: 95px
   &__block
-    display: flex
-    justify-content: space-between
-    flex-direction: row
-    max-width: 910px
+    position: relative
     margin-left: auto
     margin-right: auto
+.slide
+  display: flex
+  justify-content: space-between
+  flex-direction: row
+  max-width: 910px
+  width: 98%
+  margin-left: auto
+  margin-right: auto
 .slider
+  &-one
+    position: relative
+    width: 96%
+    margin-left: auto
+    margin-right: auto
   &__img
+    display: block
     width: 409px
     height: 340px
   &-block
@@ -26,7 +37,7 @@
   &__title
     display: block
     padding-bottom: 25px
-    margin-top: -3px
+    margin-top: 0
     font-size: 24px
     +reg
   &__desc
@@ -57,4 +68,78 @@
     margin-top: 5px
     padding-top: 23px
     padding-bottom: 23px
-    text-align: center    
+    text-align: center 
+  &-arrow
+    &__left, &__right
+      +light
+      font-size: 35px
+      cursor: pointer
+      position: absolute
+      display: block
+      height: 34px
+      z-index: 10
+    &__left
+      left: 0
+      top: calc(50% - 28px)
+    &__right
+      right: 0
+      top: calc(50% - 28px)
+
+
+.slider-one .slick-slide 
+  justify-content: space-between   
+
+@media (max-width: 1200px)
+  .price
+    &__subtitle
+      width: 50%
+    &__block
+      width: 95%
+  .slider
+    width: 93%
+@media (max-width: 992px)
+  .price
+  .slide
+    flex-direction: column
+  .slider
+    &__title
+      margin-top: 30px
+    &__img
+      margin-left: auto
+      margin-right: auto
+    &__desc
+      max-width: 350px
+      width: 60%
+      padding-bottom: 20px
+    &-block
+      text-align: center
+      justify-content: center
+      align-items: center
+    &-price
+      &__items
+        flex-direction: column
+        margin-left: auto
+        margin-right: auto
+    &__button
+      margin-bottom: 50px
+
+@media (max-width: 540px)
+  .price
+    padding-top: 30px
+    padding-bottom: 0
+    &__title
+      font-size: 20px
+    &__subtitle
+      font-size: 14px
+  .slider
+    &__img
+      width: 270px
+      height: 100%
+    &__button
+      font-size: 16px
+      padding-top: 15px
+      padding-bottom: 15px
+    &-arrow
+      &__left, &__right
+        & i
+          font-size: 16px

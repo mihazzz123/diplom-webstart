@@ -1,0 +1,63 @@
+.clients
+  padding-bottom: 175px
+  &-block
+    position: relative
+  &__title
+    display: block
+    text-align: center
+    margin-left: auto
+    margin-right: auto
+    margin-top: 95px
+    margin-bottom: 100px
+    color: $text-color
+    font-size: 24px
+    line-height: 22px
+    +reg
+.slider
+  &-two
+    max-width: 970px
+    width: 96%
+    margin-left: auto
+    margin-right: auto
+    display: flex
+    justify-content: space-between
+    flex-direction: row
+    flex-wrap: wrap
+  &__item
+    display: block
+  &__image
+    display: flex
+    justify-content: center
+    align-items: center
+
+.arrow-left, .arrow-right
+  height: 26px
+  cursor: pointer 
+  position: absolute
+  font-size: 35px
+  display: block
+  height: 34px
+  z-index: 10
+.arrow-left
+  top: 35%
+  left: 0
+.arrow-right
+  top: 35%
+  right: 0
+
+.slider-two .slick-slide 
+  justify-content: center
+  display: flex
+  height: auto
+  align-items: center
+  justify-content: center
+  flex-grow: 3
+.slider-two .slick-track
+  display: flex
+  justify-content: center
+@media (max-width: 720px)
+  .clients
+    padding-bottom: 80px
+    &__title
+      margin-top: 80px
+      margin-bottom: 50px
