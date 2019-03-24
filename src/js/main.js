@@ -1,5 +1,18 @@
 $(document).ready( function() { 
 
+// Модальное окно
+var button = $('#button');
+var modal = $('.modal');
+var closeBtn = $('#close-btn');
+
+button.on('click', function(){
+modal.addClass('modal-active');
+});
+
+closeBtn.on('click', function(){
+modal.removeClass('modal-active');
+});
+
 // Гамбургер
 
   $('#btn').click(function() {
@@ -53,6 +66,12 @@ $(document).ready( function() {
 
 // Валидация форм
   $("#hero-form").validetta( {
+    errorTemplateClass : 'validetta-bubble',
+    bubblePosition: 'bottom',
+    bubbleGapTop: 5,
+    bubbleGapLeft: 150
+  });
+  $("#modal-form").validetta( {
     errorTemplateClass : 'validetta-bubble',
     bubblePosition: 'bottom',
     bubbleGapTop: 5,

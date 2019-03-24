@@ -22,6 +22,24 @@
   <script src="https://yandex.st/jquery/2.2.3/jquery.min.js"></script>
   <!-- HEADER -->
 
+  <div class="modal">
+    <div class="modal-dialog">
+      <div id="close-btn" class="modal-dialog__close">&times;</div>
+      <div class="modal-block">
+          <h4 class="modal-dialog__title">Заказать звонок</h4>
+          <form action="mail.php" method="POST" id="modal-form" class="modal-form">
+            <input type="text" name="username" class="modal-form__input input" placeholder="Ваше имя" data-validetta="required,minLength[2],maxLength[15]"  data-vd-message-required="Укажите имя." data-vd-message-minLength="Минимум 2 символов" data-vd-message-maxLength="Максимум 15 символов">
+            <input type="tel" name="phone" class="modal-form__input input phone" placeholder="Ваш телефон" data-validetta="required">
+            <input type="text" class="input modal-form__input" name="email" placeholder="Электронная почта" data-validetta="required,email">
+            <button type="submit" class="button modal-form__button">Перезвоните мне</button>
+          </form>
+          <!-- /.modal-form -->
+          <!-- /.modal-dialog__title -->
+      </div>
+    </div>
+  </div>
+  <!-- /.modal -->
+
   <header class="header-section">
     <div id="header" class="header section-first">
       <div class="container">
@@ -44,7 +62,7 @@
           <!-- /.header-navigation -->
           <div class="header-contact contact">
             <a href="tel:8800891-33-33" class="header-contact__phone contact__phone phone">8 800 891-33-33</a> <!-- /.header-contakt__phone -->
-            <a href="#" id="callMe" onclick="ym(52938172, 'reachGoal', 'callMe'); return true;" class="header-contact__text contact__text">
+            <a href="#" id="button" onclick="ym(52938172, 'reachGoal', 'callMe'); return true;" class="header-contact__text contact__text">
             Заказать обратный звонок
             </a> <!-- /.header-contact__text -->
           </div>
@@ -56,65 +74,65 @@
     </div>
     <!-- /.header -->
   
-  <!--  HERO  -->
+    <!--  HERO  -->
 
-  <section id="hero" class="hero">
-      <div class="container">
-        <div class="hero-block">
-  
-          <div class="hero-text">
-            <h2 class="hero__title">Изготовление макетов любой сложности</h2>
-            <!-- /.section__title hero__title -->
-            <h4 class="hero__subtitle">Продажи. Инвестиции. Имидж.</h4>
-            <!-- /.hero__subtitle -->
-            <ul class="hero-list">
-              <li class="hero-list__item">
-                <span class="hero-list__icon">5</span>
-                <!-- /.hero-list__icon -->
-                <span class="hero-list__text">Срок производства <br>от 5 дней</span>
-                 <!-- /.hero-list__text -->
-              </li>
-              <li class="hero-list__item">
-                <span class="hero-list__icon">24</span>
-                <!-- /.hero-list__icon -->
-                <span class="hero-list__text">Гарантия на макеты <br>24 месяца</span>
-                 <!-- /.hero-list__text -->
-              </li>
-              <li class="hero-list__item">
-                <span class="hero-list__icon"><i class="fas fa-sync"></i></span>
-                <!-- /.hero-list__icon -->
-                <span class="hero-list__text">Проектируем, изготавливаем,<br> доставляем и устанавливаем</span>
-                 <!-- /.hero-list__text -->
-              </li>
-              <li class="hero-list__item">
-                <span class="hero-list__icon"><i class="fas fa-map-marked-alt"></i></span>
-                <!-- /.hero-list__icon -->
-                <span class="hero-list__text">Застрахуем, доставим<br> и установим</span>
-                 <!-- /.hero-list__text -->
-              </li>
-            </ul>
+    <section id="hero" class="hero">
+        <div class="container">
+          <div class="hero-block">
+    
+            <div class="hero-text">
+              <h2 class="hero__title">Изготовление макетов любой сложности</h2>
+              <!-- /.section__title hero__title -->
+              <h4 class="hero__subtitle">Продажи. Инвестиции. Имидж.</h4>
+              <!-- /.hero__subtitle -->
+              <ul class="hero-list">
+                <li class="hero-list__item">
+                  <span class="hero-list__icon">5</span>
+                  <!-- /.hero-list__icon -->
+                  <span class="hero-list__text">Срок производства <br>от 5 дней</span>
+                  <!-- /.hero-list__text -->
+                </li>
+                <li class="hero-list__item">
+                  <span class="hero-list__icon">24</span>
+                  <!-- /.hero-list__icon -->
+                  <span class="hero-list__text">Гарантия на макеты <br>24 месяца</span>
+                  <!-- /.hero-list__text -->
+                </li>
+                <li class="hero-list__item">
+                  <span class="hero-list__icon"><i class="fas fa-sync"></i></span>
+                  <!-- /.hero-list__icon -->
+                  <span class="hero-list__text">Проектируем, изготавливаем,<br> доставляем и устанавливаем</span>
+                  <!-- /.hero-list__text -->
+                </li>
+                <li class="hero-list__item">
+                  <span class="hero-list__icon"><i class="fas fa-map-marked-alt"></i></span>
+                  <!-- /.hero-list__icon -->
+                  <span class="hero-list__text">Застрахуем, доставим<br> и установим</span>
+                  <!-- /.hero-list__text -->
+                </li>
+              </ul>
+            </div>
+            <!-- /.hero-text -->
+    
+            <div class="hero-form__wrap">
+                <form action="mail.php" method="POST" class="form hero-form" id="hero-form" onsubmit="ym(52938172, 'reachGoal', 'hero_form'); return true;">
+                    <span class="hero-form__title">Оставьте заявку и получите <br> расчет стоимость макета <br> в течение <b>30 минут</b></span>
+                    <!-- /.hero-form__title -->
+                    <input type="text" class="input hero-form__input" name="username" placeholder="Ваше имя" data-validetta="required,minLength[2],maxLength[15]"  data-vd-message-required="Укажите имя." data-vd-message-minLength="Минимум 2 символов" data-vd-message-maxLength="Максимум 15 символов">
+                    <input type="tel" class="input hero-form__input phone" name="phone" placeholder="Контактный телефон" data-validetta="required">
+                    <input type="text" class="input hero-form__input" name="email" placeholder="Электронная почта" data-validetta="required,email">
+                    <button type="submit" class="button hero-form__button">Оставить заявку</button>
+                    <!-- /.button hero-form__button -->
+                  </form>
+                  <!-- /#hero-form.form hero-form -->
+            </div>
+            <!-- /.hero-form__wrap -->
+    
           </div>
-          <!-- /.hero-text -->
-  
-          <div class="hero-form__wrap">
-              <form action="mail.php" method="POST" class="form hero-form" id="hero-form" onsubmit="ym(52938172, 'reachGoal', 'hero_form'); return true;">
-                  <span class="hero-form__title">Оставьте заявку и получите <br> расчет стоимость макета <br> в течение <b>30 минут</b></span>
-                  <!-- /.hero-form__title -->
-                  <input type="text" class="input hero-form__input" name="username" placeholder="Ваше имя" data-validetta="required,minLength[2],maxLength[15]"  data-vd-message-required="Укажите имя." data-vd-message-minLength="Минимум 2 символов" data-vd-message-maxLength="Максимум 15 символов">
-                  <input type="tel" class="input hero-form__input phone" name="phone" placeholder="Контактный телефон" data-validetta="required">
-                  <input type="text" class="input hero-form__input" name="email" placeholder="Электронная почта" data-validetta="required,email">
-                  <button type="submit" class="button hero-form__button">Оставить заявку</button>
-                  <!-- /.button hero-form__button -->
-                </form>
-                <!-- /#hero-form.form hero-form -->
-          </div>
-          <!-- /.hero-form__wrap -->
-  
+          <!-- /.hero-block -->
         </div>
-        <!-- /.hero-block -->
-      </div>
-      <!-- /.container -->
-  </section>
+        <!-- /.container -->
+    </section>
     <!-- /.hero -->
   </header>
 
@@ -329,11 +347,11 @@
         <div class="slide">
             <img src="img/price/price-img-1.jpg" alt="" class="slider__img">
             <div class="slider-block">
-              <h3 class="slider__title">Порт Артек</h3>
+              <h3 class="slider__title">Макет дома-дачи</h3>
               <!-- /.slider__title -->
               <small class="slider__desc-tag">Описание:</small>
               <!-- /.slider__desc-tag -->
-              <span class="slider__desc">Презентация порта Артек для первых лиц государства</span>
+              <span class="slider__desc">Презентация макета Дома-Дачи</span>
               <div class="slider-price__items">
                 <div class="slider-price__item">
                   <small class="slider__desc-tag">Масштаб:</small> 
