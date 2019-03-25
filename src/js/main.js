@@ -80,30 +80,30 @@ modal.removeClass('modal-active');
   
 // Карта
 // Как только будет загружен API и готов DOM, выполняем инициализацию
-  ymaps.ready(init);
-// Инициализация и уничтожение карты при нажатии на кнопку.
-  function init () {
-    var myMap;
+//   ymaps.ready(init);
+// // Инициализация и уничтожение карты при нажатии на кнопку.
+//   function init () {
+//     var myMap;
 
-  $('#map').hover( function () {
-    if (!myMap) {
-      myMap = new ymaps.Map('map', {
-        center: [55.850326, 37.537889],
-        zoom: 17,
-        scroll: false
-      }, {
-        searchControlProvider: 'yandex#search'
-      });
-        var glyphIcon = new ymaps.Placemark([55.850326, 37.537889], {}, {
-          preset: 'islands#redGlyphIcon', 
-          iconGlyph: 'home',
-        });
-        myMap.geoObjects
-          .add(glyphIcon);
-        myMap.behaviors.disable('scrollZoom');
-      }
-    });
-  }
+//   $('#map').hover( function () {
+//     if (!myMap) {
+//       myMap = new ymaps.Map('map', {
+//         center: [55.850326, 37.537889],
+//         zoom: 17,
+//         scroll: false
+//       }, {
+//         searchControlProvider: 'yandex#search'
+//       });
+//         var glyphIcon = new ymaps.Placemark([55.850326, 37.537889], {}, {
+//           preset: 'islands#redGlyphIcon', 
+//           iconGlyph: 'home',
+//         });
+//         myMap.geoObjects
+//           .add(glyphIcon);
+//         myMap.behaviors.disable('scrollZoom');
+//       }
+//     });
+//   }
 
 
 });
